@@ -1,0 +1,110 @@
+<mat-sidenav-container class="sidenav-container">
+  <mat-sidenav #drawer class="sidenav" fixedInViewport ="false"
+      [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
+      [mode]="(isHandset$ | async) ? 'over' : 'side'"
+      [opened]="(isHandset$ | async) === false">
+    <mat-toolbar>Menu</mat-toolbar>
+    <nav class="bg-dark">
+      <div>
+          <ul class="navbar-nav mr-auto bg-pink text-white nav-item">
+            <li class="nav-item active">
+              <a class="nav-link " routerLink="/home" >
+                <mat-icon class="home-ico">home</mat-icon>
+             Accueil
+              </a>
+            </li>
+            <li ngbDropdown class=" dropdown">
+              <div ngbDropdown class="d-inline-block ">
+              <a class="nav-link " href="#" id="dropdownBasic1" ngbDropdownToggle routerLink="#">
+                <mat-icon class="home-ico">perm_identity</mat-icon>
+                Gestion employes
+              </a>
+              <div ngbDropdownMenu aria-labelledby="dropdownBasic1" class="bg hover-submenu">
+                <button routerLink="/listemployer" ngbDropdownItem class="text-white" >List employes</button>
+                <button ngbDropdownItem class="text-white">Ajouter Employes</button>
+              </div>
+              </div>
+            </li>
+            <li ngbDropdown class=" dropdown ">
+              <div ngbDropdown class="d-inline-block ">
+                <a type="text" class=' text-white 'id="dropdownBasic1" ngbDropdownToggle>
+                  <mat-icon class="home-ico"> border_color</mat-icon> Contrat
+                </a>
+                <div ngbDropdownMenu aria-labelledby="dropdownBasic1" class="bg hover-submenu">
+                  <button ngbDropdownItem class="text-white">CDD</button>
+                  <button ngbDropdownItem class="text-white">CDI</button>
+                  <button ngbDropdownItem class="text-white">renumeration</button>
+                </div>
+              </div>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link disabled nav-item " href="#">	<mat-icon class="home-ico" >https</mat-icon>
+                Deconnexion
+              </a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+  </mat-sidenav>
+  <mat-sidenav-content>
+    <mat-toolbar color="primary">
+      <button
+        type="button"
+        aria-label="Toggle sidenav"
+        mat-icon-button
+        (click)="drawer.toggle()"
+        *ngIf="isHandset$ | async">
+        <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
+      </button>
+      <span>logicielRH1</span>
+      <span class="space"></span>
+      <nav class="navbar navbar-expand-lg navbar-light bg-pink">
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+              <a class="nav-link" href="#">
+                <mat-icon class="home-icon">home</mat-icon>
+             Accueil
+              </a>
+            </li>
+            <li ngbDropdown class=" dropdown ">
+              <div ngbDropdown class="d-inline-block">
+              <a class="nav-link" href="#"id="dropdownBasic1" ngbDropdownToggle routerLink="#">
+                <mat-icon class="home-icon">perm_identity</mat-icon>
+                Gestion employes
+              </a>
+              <div ngbDropdownMenu aria-labelledby="dropdownBasic1" class="hover-submenu">
+                <button ngbDropdownItem  routerLink="/listemployer">List Employes</button>
+                <button ngbDropdownItem>Ajouter Employes</button>
+              </div>
+            </div>
+            </li>
+            <li ngbDropdown class=" dropdown ">
+              <div ngbDropdown class="d-inline-block">
+                <a type="text" class='btn btn-pink'id="dropdownBasic1" ngbDropdownToggle>
+                  <mat-icon class="home-icon"> border_color</mat-icon> Contrat
+                </a>
+                
+                <div ngbDropdownMenu aria-labelledby="dropdownBasic1" class="hover-submenu">
+                  <button ngbDropdownItem>CDD</button>
+                  <button ngbDropdownItem>CDI</button>
+                  <button ngbDropdownItem>renumeration</button>
+                </div>
+              </div>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link disabled" href="#">
+                <mat-icon class="home-icon" >https</mat-icon>Deconnexion
+              </a>
+            </li>
+          </ul>
+        </div>
+        
+      </nav>
+    </mat-toolbar>
+    <!-- Add Content Here -->
+    <div class="container">
+        <router-outlet></router-outlet>
+     </div>
+  </mat-sidenav-content>
+</mat-sidenav-container>

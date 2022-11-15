@@ -1,0 +1,91 @@
+.sidenav-container {
+  height: 100%;
+}
+
+.sidenav {
+  width: 200px;
+  box-shadow: 3px 0 6px rgb(0,0,0, 24);
+}
+
+.sidenav .mat-toolbar {
+  background: rgb(104, 8, 230);
+}
+
+.mat-toolbar.mat-primary {
+  position: sticky;
+  top: 0;
+  z-index: 1;
+}
+.nav-item :hover{
+  background-color: black;
+}
+.hover-submenu :hover{
+  background-color: rgb(228, 191, 30);
+
+}
+.space{
+  flex: 1 1 auto;
+}
+ 
+mat-toolbar a{
+  display: inline-block;
+  margin: 0 10px;
+  color: #fff;
+  text-decoration: none;
+  margin-right: 30px;
+}
+@media (min-width: 768px) {
+  .sidenav {
+    display: none;
+  }
+  
+}
+.navbar ul li{
+  float:right;
+  margin: 0 ;
+  height:100%;
+  font-size: 18px;
+}
+.nav-item .d-inline-block #dropdownBasic1{
+  margin: 0 ;
+  height:100%;
+
+}
+a :hover{
+  background-color: black;
+}
+.nav-link .text-white1{
+  font-size:large;
+}
+.btn{
+  font-size: 20px;
+  height: 100%;
+
+}
+.home-icon{
+  margin: 0;
+  font-size:25px;
+  color: rgb(228, 191, 30);
+ height: 100%;
+
+}
+.bg{
+  background-color: rgb(104, 14, 187);
+}
+.home-ico{
+  margin: 0;
+  font-size:25px;
+  color:  rgb(228, 191, 30);
+
+
+}
+.text-white {
+  margin: 0;
+  font-size: 18px;
+  height: 100%;
+  text-decoration:none
+}
+
+
+
+
