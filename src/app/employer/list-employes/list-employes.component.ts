@@ -11,6 +11,8 @@ import { HttpErrorResponse } from '@angular/common/http';
 export class ListEmployesComponent implements OnInit {
 
   public employer!: Employer[];
+  displayedColumns =['id','nom','prenom','dateNaissance','cni']
+ 
 
  constructor( private ServiceEmployer: ServiceEmployer){}
 
